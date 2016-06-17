@@ -1,36 +1,24 @@
 ---
-layout: page
+layout: default
 ---
 
-{% for post in site.posts limit:10 %}
-  <h2 class="post-title">
-    <a href="{{post.url | prepend:site.baseurl | prepend:site.url}}">
-      {{ post.title }}
-    </a>
-  </h3>
+<div class="main-post-list">
 
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time>{{ post.date | date_to_string }}</time>
-  </div>
-  <ul>
-    {% for tag in post.tags %}
-    <li><a href="{{site.baseurl | prepend:site.url}}/tag/{{ tag }}">{{ tag }}</a></li>
+  <ol class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}&hellip;</p>
+        <div class="post-list__meta"><time datetime="{{ post.date | date: "%-d %b %Y" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time> &#8226; <span class="post-meta__tags">on {% for tag in post.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span></div>
+        <hr class="post-list__divider">
+      </li>
     {% endfor %}
-  </ul>
-</div>
+  </ol>
 
-  <div class="post-descr">
-    <p>
-      {{ post.description }}
-    </p>
-  </div>
-  {% endfor %}
+  <hr class="post-list__divider ">
 
+  {% if paginator.previous_page or paginator.next_page %}
+      {% include pagination.html %}
+  {% endif %}
 
-<div class="post-footer">
-  <div class="column-full">
-    <h3><a href="{{ '/archive.html' | prepend: site.baseurl | prepend: site.url }}">Blog archive</a></h3>
-  </div>
 </div>
