@@ -1,5 +1,5 @@
 # Site settings
-title: My Personal Blog
+title: Jagadeesh N Malakannavar
 description: 'Software, Armature Radio, Reiki and Cycling'
 url: 'http://mnjagadeesh.net'
 baseurl: '/'
@@ -12,6 +12,7 @@ author:
   twitter_username: mnjagadeesh
   github_username:  mnjagadeesh
   linkedin_username:  mnjagadeesh
+  callsign: vu3jnm
 
 defaults:
   -
