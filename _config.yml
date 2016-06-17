@@ -3,8 +3,10 @@ title:    Jagadeesh N Malakannavar
 description: 'Software, Armature Radio, Reiki and Cycling'
 url: 'http://mnjagadeesh.net'
 baseurl: '/'
+comments: true
 # google_analytics: 'UA-XXXXXX-X'
-disqus_shortname: 'jagadeeshmalakannavar'
+disqus_shortname: 'mnjagadeesh'
+
 
 author:
   name: 'Jagadeesh N Malakannavar'
