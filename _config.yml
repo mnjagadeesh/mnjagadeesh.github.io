@@ -4,7 +4,7 @@ description: 'Software, Armature Radio, Reiki and Cycling'
 url: 'http://mnjagadeesh.net'
 baseurl: '/'
 # google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
+disqus_shortname: 'jagadeeshmalakannavar'
 
 author:
   name: 'Jagadeesh N Malakannavar'

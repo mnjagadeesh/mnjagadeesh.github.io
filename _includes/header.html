@@ -77,6 +77,16 @@
               </li>
             {% endif %}
 
+              {% if site.author.callsign %}
+              <!-- callsign -->
+              <li class="navigation__item">
+                <a href="http://hamcall.net/call/VU3JNM" title="HAM details" target="_new">
+                  <i class="icon icon-ham"></i>
+                  <span class="label">HAM</span>
+                </a>
+              </li>
+            {% endif %}
+
             <!-- RSS -->
             <li class="navigation__item">
               <a href="{{ "feed.xml" | prepend: site.baseurl }}" title="Subscribe" target="_blank">
