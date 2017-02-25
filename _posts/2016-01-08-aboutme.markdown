@@ -11,6 +11,8 @@ live in Bangalore, India.
 I love building software tools, gluing tools and automation. I use Perl, Python,
 Go for scripting. Emacs is my productivity tool and Linux is my operating system.
 
+Apart from helping on opensource automation, I am interested in Techtalks.
+
 I am a cyclist. I use bicycle to commute to work. I prefer MTB and hybrid cycles.
 
 I am a Amateur Radio operator with callsign vu3jnm. Mostly on VHF and 20 meter.
