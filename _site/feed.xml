@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jagadeesh N Malakannavar</title>
+    <description>Software, Armature Radio, Reiki and Cycling</description>
+    <link>http://mnjagadeesh.net#//</link>
+    <atom:link href="http://mnjagadeesh.net#//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 28 Jan 2018 20:04:28 +0530</pubDate>
+    <lastBuildDate>Sun, 28 Jan 2018 20:04:28 +0530</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>About Me!</title>
+        <description>&lt;p&gt;Hello,&lt;/p&gt;
+
+&lt;p&gt;My name is Jagadeesh Malakannavar. I specialize in DevOps, Automation  and System integration. I offer my services to businesses of all size to scale up business by crafting creative solutions. Email me to see how I can be helpful to you.&lt;/p&gt;
+
+&lt;p&gt;I have very good experience working on domains like Finance, Book publishing, Networking and Healthcare.&lt;/p&gt;
+
+&lt;p&gt;I do Tecktalks. I love conducting technical workshops.&lt;/p&gt;
+
+&lt;p&gt;I live in Bangalore, India. I am a digital nomad.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 Jan 2016 20:34:23 +0530</pubDate>
+        <link>http://mnjagadeesh.net#//2016/aboutme/</link>
+        <guid isPermaLink="true">http://mnjagadeesh.net#//2016/aboutme/</guid>
+        
+        <category>personal</category>
+        
+        
+        <category>personal</category>
+        
+      </item>
+    
+  </channel>
+</rss>
