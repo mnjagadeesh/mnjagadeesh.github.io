@@ -5,7 +5,6 @@ categories: [personal]
 tags: [personal]
 ---
 
-
 Hello,
 
 My name is Jagadeesh Malakannavar. I specialize in DevOps, Automation  and System integration. I offer my services to businesses of all size to scale up business by crafting creative solutions. Email me to see how I can be helpful to you.
