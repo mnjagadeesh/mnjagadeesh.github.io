@@ -1,30 +1,36 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Jagadeesh N Malakannavar</title>
+    <description>Software, Armature Radio, Reiki and Cycling</description>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 03 Feb 2018 09:49:48 +0530</pubDate>
+    <lastBuildDate>Sat, 03 Feb 2018 09:49:48 +0530</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>About Me!</title>
+        <description>&lt;p&gt;Hello,&lt;/p&gt;
+
+&lt;p&gt;My name is Jagadeesh Malakannavar. I specialize in DevOps, Automation  and System integration. I offer my services to businesses of all size to scale up business by crafting creative solutions. Email me to see how I can be helpful to you.&lt;/p&gt;
+
+&lt;p&gt;I have very good experience working on domains like Finance, Book publishing, Networking and Healthcare.&lt;/p&gt;
+
+&lt;p&gt;I do Tecktalks. I love conducting technical workshops.&lt;/p&gt;
+
+&lt;p&gt;I live in Bangalore, India. I am a digital nomad.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 Jan 2016 20:34:23 +0530</pubDate>
+        <link>http://localhost:4000//2016/aboutme/</link>
+        <guid isPermaLink="true">http://localhost:4000//2016/aboutme/</guid>
+        
+        <category>personal</category>
+        
+        
+        <category>personal</category>
+        
       </item>
-    {% endfor %}
+    
   </channel>
 </rss>
