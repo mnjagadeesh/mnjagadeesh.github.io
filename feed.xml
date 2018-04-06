@@ -3,11 +3,47 @@
   <channel>
     <title>Jagadeesh N Malakannavar</title>
     <description>Software, Armature Radio, Reiki and Cycling</description>
-    <link>http://localhost:4000//</link>
-    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 03 Feb 2018 09:49:48 +0530</pubDate>
-    <lastBuildDate>Sat, 03 Feb 2018 09:49:48 +0530</lastBuildDate>
+    <link>http://mnjagadeesh.net//</link>
+    <atom:link href="http://mnjagadeesh.net//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 06 Apr 2018 05:38:14 +0530</pubDate>
+    <lastBuildDate>Fri, 06 Apr 2018 05:38:14 +0530</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>V Dipole Antenna</title>
+        <description>&lt;p&gt;Here is my V Dipole antenna for weather.&lt;/p&gt;
+
+&lt;p&gt;Pic: &lt;img src=&quot;/images/IMG_20170421_114027.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 04 Feb 2018 20:05:00 +0530</pubDate>
+        <link>http://mnjagadeesh.net//2018/vdipole/</link>
+        <guid isPermaLink="true">http://mnjagadeesh.net//2018/vdipole/</guid>
+        
+        <category>hamradio</category>
+        
+        
+        <category>hamradio</category>
+        
+      </item>
+    
+      <item>
+        <title>Morse Code Song</title>
+        <description>&lt;p&gt;Here is an interesting song that helps learning morse code:
+&lt;a href=&quot;https://www.youtube.com/watch?v=Q19_CIDycWg&quot;&gt;Morse Code Song&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I could able to remember about 7 letters during my first watch. :-)
+Hope it will help you learning morse code.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 04 Feb 2018 19:05:00 +0530</pubDate>
+        <link>http://mnjagadeesh.net//2018/morsesong/</link>
+        <guid isPermaLink="true">http://mnjagadeesh.net//2018/morsesong/</guid>
+        
+        <category>hamradio</category>
+        
+        
+        <category>hamradio</category>
+        
+      </item>
     
       <item>
         <title>About Me!</title>
@@ -21,9 +57,9 @@
 
 &lt;p&gt;I live in Bangalore, India. I am a digital nomad.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 08 Jan 2016 20:34:23 +0530</pubDate>
-        <link>http://localhost:4000//2016/aboutme/</link>
-        <guid isPermaLink="true">http://localhost:4000//2016/aboutme/</guid>
+        <pubDate>Fri, 08 Jan 2016 15:04:23 +0530</pubDate>
+        <link>http://mnjagadeesh.net//2016/aboutme/</link>
+        <guid isPermaLink="true">http://mnjagadeesh.net//2016/aboutme/</guid>
         
         <category>personal</category>
         
