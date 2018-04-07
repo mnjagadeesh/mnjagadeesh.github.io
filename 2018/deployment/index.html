@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Morse Code Song</title>
+  <title>Deployment Automation</title>
   <meta name="description" content="Software, Armature Radio, Reiki and Cycling">
   <meta name="author" content="Jagadeesh N Malakannavar">
   <meta name="HandheldFriendly" content="True">
@@ -43,7 +43,7 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000//2018/morsesong/">
+  <link rel="canonical" href="http://localhost:4000//2018/deployment/">
   <link rel="alternate" type="application/rss+xml" title="Jagadeesh N Malakannavar" href="/feed.xml">
 </head>
 
@@ -157,17 +157,90 @@
         <article class="post-container post-container--single">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="4 Feb 2018" class="post-meta__date date">4 Feb 2018</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#hamradio">hamradio</a> </span>
+      <time datetime="7 Apr 2018" class="post-meta__date date">7 Apr 2018</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#devops">devops</a> </span>
     </div>
-    <h1 class="post-title">Morse Code Song</h1>
+    <h1 class="post-title">Deployment Automation</h1>
   </header>
 
   <section class="post">
-    <p>Here is an interesting song that helps learning morse code:
-<a href="https://www.youtube.com/watch?v=Q19_CIDycWg">Morse Code Song</a></p>
+    <p>Couple months back I was asked to look into deployment process of a software
+developed using zope, the open source web framework for python. Deployment of
+this product is a quite complex process. The complete installation of this
+product on 6 servers takes about 5 days. It has 34 components to deploy.</p>
 
-<p>I could able to remember about 7 letters during my first watch. :-)
-Hope it will help you learning morse code.</p>
+<p>Product is deployed using puppet master and puppet agent setup.</p>
+
+<p>The puppet master runs on CentOS 6.8. This server has 8 cores and 8G memory.
+Puppet agent nodes run Windows 2012 R2. Deployment process involves setting up
+puppet master, puppet agents, prepare configuration files, extracting artifacts.
+Then log on to each windows machine to run start deploy each component.</p>
+
+<p>This process is fine if there are 5 to 6 servers. But it will not scale up and
+becomes laborious work as number of servers increase. Growing business needs
+more efficient, robust and scalable product deployment solution.</p>
+
+<p>Another challenge is to reduce deployment time and make it easy to deploy.</p>
+
+<p>I started analyzing each process to understand pain area. I quickly learnt that
+activities like setting up puppet master, puppet agents, prepare configuration
+files, extract artifacts are all manual processes. After puppet infrastructure
+setup, deployment engineer manually logs on to each server using tool like
+remote desktop to setup puppet agents.</p>
+
+<p>First , I decided to automate the manual processes. But I was told not to
+introduce any new technology and tools unless absolutely necessary. Since it is
+a python shop, I have chosen python for scripting, Jenkins for deployment
+automation and nginx is used as local package server.</p>
+
+<p>I chose Jenkins to run slaves on each puppet agent node. Also I automated
+installation and setup puppet master and nginx. Jenkins job will pull the nginx,
+puppet master software and install them.</p>
+
+<p>But setting up puppet agent and remote execution, I have to install jenkins on
+each windows server. Admin has to log on to each windows server at least once to
+setup jenkins slaves. To avoid this I chose to use winrm. Configuration is
+simple and done remotely. Pywinrm helped remote login to windows. This allowed
+me to download puppet agent software to each windows server, install them and
+handshake with puppet master remotely. Puppet agent setup and configuration also
+programmed to run in parallel. Python multiprocessing module was used to achieve
+this. This save good amount of time and effort. This whole activity was talking
+about 6 to 8 hours for an expert deployment engineer. Setting up of puppet agent
+on 6 servers has been reduced now to 3 mins.</p>
+
+<p>For puppet master, yaml is used for configuration. Editing yaml was another area
+of concern. Only experienced deployment engineer used to edit those huge
+configuration files. I decided to generate these configuration file using
+spreadsheet, so that editing is simple and syntax can be verified as they are
+generated.</p>
+
+<p>Now a job need to simplify yaml and puppet config generation. I captured
+information like servers and component mapping in a spreadsheet to generate yaml
+and puppet config needed for puppet. Thus editing spreadsheet is made easy and
+this spreadsheet is read using xlrd module. This job will now generate yaml and
+puppet config file in about few minutes.</p>
+
+<p>Now I had to extract artifacts. In the manual process, artifact was extracted
+just before starting deployment. With concurrent process, this process is
+reduced to 10 minutes to extract all 34 components.</p>
+
+<p>I grouped independent components and dependent and sub dependent components. I
+installed all independent components in parallel and then dependent components
+and worked on this order of installation and generated groups.</p>
+
+<p>At this time everything is setup to start installing product components using
+pywinrm.</p>
+
+<p>Jenkins job started, all processes spawned, logged onto windows as expected.
+Almost in first two minutes seen component started getting deployed. For my
+great surprise, all components deployed and application has come up in about 5
+hours.</p>
+
+<p>I did many testing, everything is working as expected and installation time is
+reduced by about 90%. This whole process is greatly simplified. Now anyone can
+edit spreadsheet to change configurations and install product.</p>
+
+<p>With this I will have to look for optimization now. I will have to optimize
+database setup, zope setup.</p>
 
   </section>
   <section id="disqus_thread"></section><!-- /#disqus_thread -->
@@ -177,9 +250,9 @@ Hope it will help you learning morse code.</p>
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'mnjagadeesh'; // required: replace example with your forum shortname
         var disqus_config = function () {
-          this.page.url = 'http://localhost:4000/2018/morsesong/';
-          this.page.identifier = '/2018/morsesong';
-          this.page.title = 'Morse Code Song';
+          this.page.url = 'http://localhost:4000/2018/deployment/';
+          this.page.identifier = '/2018/deployment';
+          this.page.title = 'Deployment Automation';
         };
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {

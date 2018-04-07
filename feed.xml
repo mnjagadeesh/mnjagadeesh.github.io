@@ -3,11 +3,103 @@
   <channel>
     <title>Jagadeesh N Malakannavar</title>
     <description>Software, Armature Radio, Reiki and Cycling</description>
-    <link>http://mnjagadeesh.net//</link>
-    <atom:link href="http://mnjagadeesh.net//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 06 Apr 2018 05:38:14 +0530</pubDate>
-    <lastBuildDate>Fri, 06 Apr 2018 05:38:14 +0530</lastBuildDate>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 07 Apr 2018 10:22:28 +0530</pubDate>
+    <lastBuildDate>Sat, 07 Apr 2018 10:22:28 +0530</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>Deployment Automation</title>
+        <description>&lt;p&gt;Couple months back I was asked to look into deployment process of a software
+developed using zope, the open source web framework for python. Deployment of
+this product is a quite complex process. The complete installation of this
+product on 6 servers takes about 5 days. It has 34 components to deploy.&lt;/p&gt;
+
+&lt;p&gt;Product is deployed using puppet master and puppet agent setup.&lt;/p&gt;
+
+&lt;p&gt;The puppet master runs on CentOS 6.8. This server has 8 cores and 8G memory.
+Puppet agent nodes run Windows 2012 R2. Deployment process involves setting up
+puppet master, puppet agents, prepare configuration files, extracting artifacts.
+Then log on to each windows machine to run start deploy each component.&lt;/p&gt;
+
+&lt;p&gt;This process is fine if there are 5 to 6 servers. But it will not scale up and
+becomes laborious work as number of servers increase. Growing business needs
+more efficient, robust and scalable product deployment solution.&lt;/p&gt;
+
+&lt;p&gt;Another challenge is to reduce deployment time and make it easy to deploy.&lt;/p&gt;
+
+&lt;p&gt;I started analyzing each process to understand pain area. I quickly learnt that
+activities like setting up puppet master, puppet agents, prepare configuration
+files, extract artifacts are all manual processes. After puppet infrastructure
+setup, deployment engineer manually logs on to each server using tool like
+remote desktop to setup puppet agents.&lt;/p&gt;
+
+&lt;p&gt;First , I decided to automate the manual processes. But I was told not to
+introduce any new technology and tools unless absolutely necessary. Since it is
+a python shop, I have chosen python for scripting, Jenkins for deployment
+automation and nginx is used as local package server.&lt;/p&gt;
+
+&lt;p&gt;I chose Jenkins to run slaves on each puppet agent node. Also I automated
+installation and setup puppet master and nginx. Jenkins job will pull the nginx,
+puppet master software and install them.&lt;/p&gt;
+
+&lt;p&gt;But setting up puppet agent and remote execution, I have to install jenkins on
+each windows server. Admin has to log on to each windows server at least once to
+setup jenkins slaves. To avoid this I chose to use winrm. Configuration is
+simple and done remotely. Pywinrm helped remote login to windows. This allowed
+me to download puppet agent software to each windows server, install them and
+handshake with puppet master remotely. Puppet agent setup and configuration also
+programmed to run in parallel. Python multiprocessing module was used to achieve
+this. This save good amount of time and effort. This whole activity was talking
+about 6 to 8 hours for an expert deployment engineer. Setting up of puppet agent
+on 6 servers has been reduced now to 3 mins.&lt;/p&gt;
+
+&lt;p&gt;For puppet master, yaml is used for configuration. Editing yaml was another area
+of concern. Only experienced deployment engineer used to edit those huge
+configuration files. I decided to generate these configuration file using
+spreadsheet, so that editing is simple and syntax can be verified as they are
+generated.&lt;/p&gt;
+
+&lt;p&gt;Now a job need to simplify yaml and puppet config generation. I captured
+information like servers and component mapping in a spreadsheet to generate yaml
+and puppet config needed for puppet. Thus editing spreadsheet is made easy and
+this spreadsheet is read using xlrd module. This job will now generate yaml and
+puppet config file in about few minutes.&lt;/p&gt;
+
+&lt;p&gt;Now I had to extract artifacts. In the manual process, artifact was extracted
+just before starting deployment. With concurrent process, this process is
+reduced to 10 minutes to extract all 34 components.&lt;/p&gt;
+
+&lt;p&gt;I grouped independent components and dependent and sub dependent components. I
+installed all independent components in parallel and then dependent components
+and worked on this order of installation and generated groups.&lt;/p&gt;
+
+&lt;p&gt;At this time everything is setup to start installing product components using
+pywinrm.&lt;/p&gt;
+
+&lt;p&gt;Jenkins job started, all processes spawned, logged onto windows as expected.
+Almost in first two minutes seen component started getting deployed. For my
+great surprise, all components deployed and application has come up in about 5
+hours.&lt;/p&gt;
+
+&lt;p&gt;I did many testing, everything is working as expected and installation time is
+reduced by about 90%. This whole process is greatly simplified. Now anyone can
+edit spreadsheet to change configurations and install product.&lt;/p&gt;
+
+&lt;p&gt;With this I will have to look for optimization now. I will have to optimize
+database setup, zope setup.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 07 Apr 2018 06:04:23 +0530</pubDate>
+        <link>http://localhost:4000//2018/deployment/</link>
+        <guid isPermaLink="true">http://localhost:4000//2018/deployment/</guid>
+        
+        <category>devops</category>
+        
+        
+        <category>devops</category>
+        
+      </item>
     
       <item>
         <title>V Dipole Antenna</title>
@@ -16,8 +108,8 @@
 &lt;p&gt;Pic: &lt;img src=&quot;/images/IMG_20170421_114027.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Feb 2018 20:05:00 +0530</pubDate>
-        <link>http://mnjagadeesh.net//2018/vdipole/</link>
-        <guid isPermaLink="true">http://mnjagadeesh.net//2018/vdipole/</guid>
+        <link>http://localhost:4000//2018/vdipole/</link>
+        <guid isPermaLink="true">http://localhost:4000//2018/vdipole/</guid>
         
         <category>hamradio</category>
         
@@ -35,8 +127,8 @@
 Hope it will help you learning morse code.&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Feb 2018 19:05:00 +0530</pubDate>
-        <link>http://mnjagadeesh.net//2018/morsesong/</link>
-        <guid isPermaLink="true">http://mnjagadeesh.net//2018/morsesong/</guid>
+        <link>http://localhost:4000//2018/morsesong/</link>
+        <guid isPermaLink="true">http://localhost:4000//2018/morsesong/</guid>
         
         <category>hamradio</category>
         
@@ -58,8 +150,8 @@ Hope it will help you learning morse code.&lt;/p&gt;
 &lt;p&gt;I live in Bangalore, India. I am a digital nomad.&lt;/p&gt;
 </description>
         <pubDate>Fri, 08 Jan 2016 15:04:23 +0530</pubDate>
-        <link>http://mnjagadeesh.net//2016/aboutme/</link>
-        <guid isPermaLink="true">http://mnjagadeesh.net//2016/aboutme/</guid>
+        <link>http://localhost:4000//2016/aboutme/</link>
+        <guid isPermaLink="true">http://localhost:4000//2016/aboutme/</guid>
         
         <category>personal</category>
         
