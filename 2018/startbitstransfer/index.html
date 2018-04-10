@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Jagadeesh N Malakannavar</title>
+  <title>Start-BitsTransfer: Tool that downloads very quickly!!</title>
   <meta name="description" content="Software, Armature Radio, Reiki and Cycling">
   <meta name="author" content="Jagadeesh N Malakannavar">
   <meta name="HandheldFriendly" content="True">
@@ -43,7 +43,7 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mnjagadeesh.net//">
+  <link rel="canonical" href="http://mnjagadeesh.net//2018/startbitstransfer/">
   <link rel="alternate" type="application/rss+xml" title="Jagadeesh N Malakannavar" href="/feed.xml">
 </head>
 
@@ -154,69 +154,68 @@
 
     <div class="content-wrapper">
       <div class="content-wrapper__inner">
-        <div class="main-post-list">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="8 Apr 2018" class="post-meta__date date">8 Apr 2018</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#devops">devops</a> </span>
+    </div>
+    <h1 class="post-title">Start-BitsTransfer: Tool that downloads very quickly!!</h1>
+  </header>
 
-  <ol class="post-list">
-    
-      <li>
-        <h2 class="post-list__post-title post-title"><a href="/2018/startbitstransfer/" title="Start-BitsTransfer: Tool that downloads very quickly!!">Start-BitsTransfer: Tool that downloads very quickly!!</a></h2>
-        <p class="excerpt">I was working on a puppet module that downloads a file of size over 3GB, unzips
+  <section class="post">
+    <p>I was working on a puppet module that downloads a file of size over 3GB, unzips
 it and update database.Puppet master setup is on CentOS 6.8 and agent running on
 Windows 2012R2. I used nginx to serve files. As usual, I used puppet protocol to
-download file.
+download file.</p>
 
-&hellip;</p>
-        <div class="post-list__meta"><time datetime="8 Apr 2018" class="post-list__meta--date date">8 Apr 2018</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#devops">devops</a> </span></div>
-        <hr class="post-list__divider">
-      </li>
-    
-      <li>
-        <h2 class="post-list__post-title post-title"><a href="/2018/deployment/" title="Deployment Automation">Deployment Automation</a></h2>
-        <p class="excerpt">Couple months back I was asked to look into deployment process of a software
-developed using zope, the open source web framework for python. Deployment of
-this product is a quite complex process. The complete installation of this
-product on 6 servers takes about 5 days. It has 34 components to deploy.
+<p>This setup was working as expected. The whole process use to complet in about
+50 minutes.</p>
 
-&hellip;</p>
-        <div class="post-list__meta"><time datetime="7 Apr 2018" class="post-list__meta--date date">7 Apr 2018</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#devops">devops</a> </span></div>
-        <hr class="post-list__divider">
-      </li>
-    
-      <li>
-        <h2 class="post-list__post-title post-title"><a href="/2018/vdipole/" title="V Dipole Antenna">V Dipole Antenna</a></h2>
-        <p class="excerpt">Here is my V Dipole antenna for weather.
+<p>After few days, I received a file size of 5GB. For this size, may times, puppet
+was failing to download it. I started evaluating best available tools.  First in
+the list was powershell’s curl. Curl was better but not quite satisfactory.
+While looking for some of the better utilities, I stumbled upon MicroSoft’s new
+utility called ‘Start-BitsTransfer’.
+Its syntax is very simple and easy to use.
+Syntax:</p>
 
-&hellip;</p>
-        <div class="post-list__meta"><time datetime="4 Feb 2018" class="post-list__meta--date date">4 Feb 2018</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#hamradio">hamradio</a> </span></div>
-        <hr class="post-list__divider">
-      </li>
-    
-      <li>
-        <h2 class="post-list__post-title post-title"><a href="/2018/morsesong/" title="Morse Code Song">Morse Code Song</a></h2>
-        <p class="excerpt">Here is an interesting song that helps learning morse code:
-<a href="https://www.youtube.com/watch?v=Q19_CIDycWg">Morse Code Song</a>
+<p>D:&gt; Start-BitsTransfer -Source “http://server.localtion/file.txt” \
+-Destination “D:\install_folder\file.txt”</p>
 
-&hellip;</p>
-        <div class="post-list__meta"><time datetime="4 Feb 2018" class="post-list__meta--date date">4 Feb 2018</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#hamradio">hamradio</a> </span></div>
-        <hr class="post-list__divider">
-      </li>
-    
-      <li>
-        <h2 class="post-list__post-title post-title"><a href="/2016/aboutme/" title="About Me!">About Me!</a></h2>
-        <p class="excerpt">Hello,
+<p>With Start-BitsTransfer download time has come down to 4 minutes. I am now using
+Start-BitsTransfer extensively to improve download times. Well Done Microsoft.</p>
 
-&hellip;</p>
-        <div class="post-list__meta"><time datetime="8 Jan 2016" class="post-list__meta--date date">8 Jan 2016</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#personal">personal</a> </span></div>
-        <hr class="post-list__divider">
-      </li>
-    
-  </ol>
+  </section>
+  <section id="disqus_thread"></section><!-- /#disqus_thread -->
+</article>
 
-  <hr class="post-list__divider ">
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'mnjagadeesh'; // required: replace example with your forum shortname
+        var disqus_config = function () {
+          this.page.url = 'http://mnjagadeesh.net/2018/startbitstransfer/';
+          this.page.identifier = '/2018/startbitstransfer';
+          this.page.title = 'Start-BitsTransfer: Tool that downloads very quickly!!';
+        };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-  
 
-</div>
+
       </div>
 
       <footer class="footer">
