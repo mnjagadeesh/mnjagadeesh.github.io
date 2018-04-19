@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Why we are still known as VUs?</title>
+  <title>Build a product with git Hook !!</title>
   <meta name="description" content="Software, Armature Radio, Reiki and Cycling">
   <meta name="author" content="Jagadeesh N Malakannavar">
   <meta name="HandheldFriendly" content="True">
@@ -43,7 +43,7 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mnjagadeesh.net//2016/vu/">
+  <link rel="canonical" href="http://mnjagadeesh.net//2016/postcommithook/">
   <link rel="alternate" type="application/rss+xml" title="Jagadeesh N Malakannavar" href="/feed.xml">
 </head>
 
@@ -157,23 +157,87 @@
         <article class="post-container post-container--single">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="20 Jul 2016" class="post-meta__date date">20 Jul 2016</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#hamradio">hamradio</a> </span>
+      <time datetime="20 Jul 2016" class="post-meta__date date">20 Jul 2016</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#devops">devops</a> </span>
     </div>
-    <h1 class="post-title">Why we are still known as VUs?</h1>
+    <h1 class="post-title">Build a product with git Hook !!</h1>
   </header>
 
   <section class="post">
-    <p>I was searching for origin of VU, a prefix used for Indian hams, I stumbled upon</p>
+    <p>I noticed that few software product companies have very complex product building
+system. For experienced engineers spent good amount of time understanding the
+system. Based on system complexity, they will be quite productive for few weeks
+or in some cases months. Initial experience will not be smooth for them.</p>
 
-<p>https://en.wikipedia.org/wiki/Amateur_radio_in_India</p>
+<p>On the other hand, companies have to spend resource on creating and maintaining
+document about building product.</p>
 
-<p>It says VU is “Indian amateur radio operators are allotted only the VU call-sign
-prefix. The V or Viceroy, series prefix was allotted to British colonies.”</p>
+<p>Team responsible for maintaining find difficulty updating a system, making
+modification, adding any new feature because it involves, sometime extensive,
+training and documentation.</p>
 
-<p>Some senior ham was telling me it was for Viceroy’s Unit.</p>
+<p>I was thinking to solve this problem. My initial idea was to choose popular tool
+that is almost known to everyone.</p>
 
-<p>Now we are close to celebrating 70th year of Independence of India, why still we
-be known as VUs? Can’t that be changed? What is there to be proud of?</p>
+<p>My obvious first choice was to make use of Jenkins. But to run Jenkins, we need
+to install jre and spare a network port. Again, not sure if everyone can use
+Jenkins. I have seen few folks who are reluctant to use it.</p>
+
+<p>During this time, I was fine-tuning git hooks. I, personally, use hooks for
+mutt, emacs, version control systems. So I got an idea if git post-checkout hook
+can be used for to build the product. Idea is automating all tedious manual steps.</p>
+
+<p>To experiment this idea I chose a small project built using
+[buildout][http://docs.buildout.org/]. It is a just simple CRUD application
+built using python and zope and MSSQL as backend database.</p>
+
+<p>To set up this application little complex, because it makes use of various third
+party components like RabbitMQ, Memcache and many other python modules. The
+buildout configuration is slightly complex and takes about 50 minutes to
+complete build. Configuration involves setting network port, database info and
+many other values.</p>
+
+<p>To begin my testing, I automated manual steps with a python script in
+post-checkout, updated ~/.gitconfig to make hooks effective. Cloned repo of
+product. After successful Cloning, default branch was checkedout. At this point
+automagically, post-commit hook started executing. It did update buildout configuration,
+executed buildout successfully. Product installation is successful, I could see
+login page.</p>
+
+<p>Since all steps were executed in machine time, complete build took considerably
+less time.</p>
+
+<p>Next step is start considering different use cases.</p>
+
+<p>For a new engineer, it takes good amount of time to collect required
+information, configure and setting up product. If it breaks during installation
+then either user has to investigate and fix issue or wait till expert comes for
+rescue. I noticed that many time it takes too long to understand root cause of
+the issue as most of time is spent collecting info about information.</p>
+
+<p>I have created separate branch specific configuration files so that it is easy
+make available up-to-date and accurate configuration. This also address issue of
+announcements and educating users. Apart from general usage, developers can
+consult manual pages for certain flags.</p>
+
+<p>Another use case was to collect sufficient logs. It is very useful to debug. 
+This reduces lot of ping-pong used to happen.</p>
+
+<p>Then to make it more effective, added few auto healing techniques. So known
+issues used to be fixed automatically. If new issue is encountered, ticket will
+be filed appropriately. Fix to this new ticket is made as known solution for
+auto healing.</p>
+
+<p>After few days, keeping hooks up-to-date was a challenge. Then I moved installer
+script to root folder. Git post commit hook invokes this script. This set up is
+going well for now.</p>
+
+<p>I have seen most of them know how to use git and find simple to configure git.</p>
+
+<p>I found it simple and effective solution to solve nice problem. It is just an
+attempt to make happy starting for new engineers with decreased churn.</p>
+
+<p>If you get any questions, clarifications please leave a comment. I will reply.</p>
+
 
   </section>
   <section id="disqus_thread"></section><!-- /#disqus_thread -->
@@ -183,9 +247,9 @@ be known as VUs? Can’t that be changed? What is there to be proud of?</p>
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'mnjagadeesh'; // required: replace example with your forum shortname
         var disqus_config = function () {
-          this.page.url = 'http://mnjagadeesh.net/2016/vu/';
-          this.page.identifier = '/2016/vu';
-          this.page.title = 'Why we are still known as VUs?';
+          this.page.url = 'http://mnjagadeesh.net/2016/postcommithook/';
+          this.page.identifier = '/2016/postcommithook';
+          this.page.title = 'Build a product with git Hook !!';
         };
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
