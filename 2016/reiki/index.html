@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
 
-  <title>Build a product with git Hook !!</title>
-  <meta name="description" content="I noticed that few products have very complex building system. Even
-experienced engineers spend good amount of time understanding the build
-system. Based on complexity of the build system, it may take few weeks to be
-productive. It might take months in some cases. Initial experience will not be
-smooth for them.
+  <title>New experiment with Reiki.</title>
+  <meta name="description" content="New experiment with Reiki.
 
 ">
   <meta name="author" content="Jagadeesh N Malakannavar">
@@ -22,12 +18,8 @@ smooth for them.
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Build a product with git Hook !!">
-  <meta name="twitter:description" content="I noticed that few products have very complex building system. Even
-experienced engineers spend good amount of time understanding the build
-system. Based on complexity of the build system, it may take few weeks to be
-productive. It might take months in some cases. Initial experience will not be
-smooth for them.
+  <meta name="twitter:title" content="New experiment with Reiki.">
+  <meta name="twitter:description" content="New experiment with Reiki.
 
 ">
   
@@ -36,12 +28,8 @@ smooth for them.
   <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Build a product with git Hook !!">
-  <meta property="og:description" content="I noticed that few products have very complex building system. Even
-experienced engineers spend good amount of time understanding the build
-system. Based on complexity of the build system, it may take few weeks to be
-productive. It might take months in some cases. Initial experience will not be
-smooth for them.
+  <meta property="og:title" content="New experiment with Reiki.">
+  <meta property="og:description" content="New experiment with Reiki.
 
 ">
   <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
@@ -67,7 +55,7 @@ smooth for them.
   <meta name="theme-color" content="#ffffff">
   
   <link rel="stylesheet" href="/css/main.css?1754981100654551960">
-  <link rel="canonical" href="http://localhost:4000/2016/postcommithook/">
+  <link rel="canonical" href="http://localhost:4000/2016/reiki/">
   <link rel="alternate" type="application/rss+xml" title="Jagadeesh N Malakannavar" href="/feed.xml">
 </head>
 
@@ -184,98 +172,30 @@ smooth for them.
         <article class="post-container post-container--single">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2016-01-03 20:34" class="post-meta__date date">3 Jan 2016</time>
+      <time datetime="2016-01-04 20:34" class="post-meta__date date">4 Jan 2016</time>
       
-      &#8226; <span class="post-meta__tags">on <a href="/tags/#devops">devops</a></span>
+      &#8226; <span class="post-meta__tags">on <a href="/tags/#reiki">reiki</a></span>
       
     </div>
-    <h1 class="post-title">Build a product with git Hook !!</h1>
+    <h1 class="post-title">New experiment with Reiki.</h1>
   </header>
 
   <section class="post">
-    <p>I noticed that few products have very complex building system. Even
-experienced engineers spend good amount of time understanding the build
-system. Based on complexity of the build system, it may take few weeks to be
-productive. It might take months in some cases. Initial experience will not be
-smooth for them.</p>
+    <h1 id="new-experiment-with-reiki">New experiment with Reiki.</h1>
 
-<p>On the other hand, resources are needed to create and maintaining document
-about building product. It involves cost and effort.</p>
+<p>This is my very recent experiment that I wanted to share with you all. Last
+Sunday about 10 cyclists had trip to Turahalli forest. Ride started from
+Nagarabhavi. We started around 6:00 AM and back to home by 9:30 AM.</p>
 
-<p>Build team finds difficulty updating a system, making any modification, adding
-any new features. Because it involves, sometime extensive, training and
-documentation.</p>
+<p>I returned home, I was too tired. Had to lot of weekend work to finish.
+Thought of postponing all of them but I could not. Then just a thought came to
+my mind to use reiki to recharge myself. I was excited to see effect.</p>
 
-<p>I was thinking to find an alternative, effective way. My initial idea was to
-choose popular tool that is almost known to everyone. Just to avoid additional
-effort of training.</p>
+<p>I gave a reiki to myself for about 45 mins. Result was amazing. I was totally
+refreshed and turbo charged.</p>
 
-<p>My obvious first choice was to make use of Jenkins. But Jenkins needs JRE and
-a network port to run. Again, not sure if everyone can use Jenkins. I have
-seen few folks who are reluctant to use it.</p>
-
-<p>During this time, I was fine-tuning git hooks. I personally use hooks for
-mutt, emacs, version control systems. I got an idea if git post-checkout hook
-can be used for to build the product. Idea is automating all tedious manual
-steps.</p>
-
-<p>To experiment this idea I chose a small project built using
-[buildout][http://docs.buildout.org/]. It is a just simple CRUD application
-built using python and zope and MSSQL as backend database.</p>
-
-<p>This application is little complex to set up. It makes use of various third
-party components like RabbitMQ, Memcache and many other python modules. The
-buildout configuration is slightly complex and takes about 50 minutes to
-complete build. Configuration involves setting network port, database info and
-many other values. Different version of product branch use different database
-version. One has to obtain this information from DB team.</p>
-
-<p>First step is automated manual steps with a python script in post-checkout,
-updated ~/.gitconfig to make hooks to reflect new hook on next clone. Cloned
-repo of product. After successful Cloning, defaulted branch was checkedout. At
-this point automagically, post-commit hook started executing. It did update
-buildout configuration, executed buildout successfully. Product installation
-is successful, I could see login page.</p>
-
-<p>Since all steps were executed in machine time, complete build took
-considerably less time.</p>
-
-<p>Next step is start considering different use cases.</p>
-
-<p>For a new engineer, it takes good amount of time to collect required
-information needed to update build configuration.</p>
-
-<p>I have created separate branch specific configuration files so that it is easy
-make available up-to-date and accurate configuration. These configuration
-files will be maintained by build team.</p>
-
-<p>If system breaks during setup then either user has to investigate and fix
-issue or wait till expert comes for rescue. I noticed that many times it takes
-too long to understand root cause of the issue. Much time is spent collecting
-logs and additional data about build break.</p>
-
-<p>This use case is handled by adding additional logging in a file. Build
-engineer can inspect this file to understand what went wrong.</p>
-
-<p>This also address issue of announcements and educating users. Apart from
-general usage, developers can consult manual pages for certain flags. This
-reduces lot of ping-pong used to happen.</p>
-
-<p>Then to make it more effective, added few auto healing techniques. So that,
-known issues used to be fixed automatically. If new issue is encountered,
-ticket will be filed appropriately with adequate log. Fix for this new ticket
-is made as known solution for auto healing.</p>
-
-<p>After few days, keeping hooks up-to-date was a challenge. Then I moved heavy
-lifting part of installer to a separate script to root folder. Now, Git post
-commit hook invokes this script. This set up is going well for now.</p>
-
-<p>Most of the engineers are familiar with git and its configuration.</p>
-
-<p>I found it simple and effective solution to solve a challenge. It is just an
-attempt to make happy starting for new engineers with decreased churn.</p>
-
-<p>If you get any questions, clarifications please leave a comment. I will reply.</p>
+<p>Just sharing this incident if anyone else had this kind experience too OR
+willing to have it.</p>
 
   </section>
   
