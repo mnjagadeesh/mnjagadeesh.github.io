@@ -6,11 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
 
-  <title>Start-BitsTransfer: Tool that downloads very quickly!!</title>
-  <meta name="description" content="I was working on a puppet module that downloads a file of size over 3GB,
-unzips it and update database.Puppet master setup is on CentOS 6.8 and agent
-running on Windows 2012R2. I used nginx to serve files. As usual, I used
-puppet protocol to download file.
+  <title>Conditional gitconfig</title>
+  <meta name="description" content="If you juggle multiple Git repositories across personal and professional projects, you’ve probably hit this scenario:
 
 ">
   <meta name="author" content="Jagadeesh N Malakannavar">
@@ -21,11 +18,8 @@ puppet protocol to download file.
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Start-BitsTransfer: Tool that downloads very quickly!!">
-  <meta name="twitter:description" content="I was working on a puppet module that downloads a file of size over 3GB,
-unzips it and update database.Puppet master setup is on CentOS 6.8 and agent
-running on Windows 2012R2. I used nginx to serve files. As usual, I used
-puppet protocol to download file.
+  <meta name="twitter:title" content="Conditional gitconfig">
+  <meta name="twitter:description" content="If you juggle multiple Git repositories across personal and professional projects, you’ve probably hit this scenario:
 
 ">
   
@@ -34,11 +28,8 @@ puppet protocol to download file.
   <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Start-BitsTransfer: Tool that downloads very quickly!!">
-  <meta property="og:description" content="I was working on a puppet module that downloads a file of size over 3GB,
-unzips it and update database.Puppet master setup is on CentOS 6.8 and agent
-running on Windows 2012R2. I used nginx to serve files. As usual, I used
-puppet protocol to download file.
+  <meta property="og:title" content="Conditional gitconfig">
+  <meta property="og:description" content="If you juggle multiple Git repositories across personal and professional projects, you’ve probably hit this scenario:
 
 ">
   <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
@@ -64,7 +55,7 @@ puppet protocol to download file.
   <meta name="theme-color" content="#ffffff">
   
   <link rel="stylesheet" href="/css/main.css?1754989574050213648">
-  <link rel="canonical" href="http://localhost:4000/2018/startbitstransfer/">
+  <link rel="canonical" href="http://localhost:4000/2018/customgitconfig/">
   <link rel="alternate" type="application/rss+xml" title="Jagadeesh N Malakannavar" href="/feed.xml">
 </head>
 
@@ -181,36 +172,108 @@ puppet protocol to download file.
         <article class="post-container post-container--single">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2018-02-01 21:34" class="post-meta__date date">1 Feb 2018</time>
+      <time datetime="2018-01-18 20:34" class="post-meta__date date">18 Jan 2018</time>
       
       &#8226; <span class="post-meta__tags">on <a href="/tags/#devops">devops</a></span>
       
     </div>
-    <h1 class="post-title">Start-BitsTransfer: Tool that downloads very quickly!!</h1>
+    <h1 class="post-title">Conditional gitconfig</h1>
   </header>
 
   <section class="post">
-    <p>I was working on a puppet module that downloads a file of size over 3GB,
-unzips it and update database.Puppet master setup is on CentOS 6.8 and agent
-running on Windows 2012R2. I used nginx to serve files. As usual, I used
-puppet protocol to download file.</p>
+    <p>If you juggle multiple Git repositories across personal and professional projects, you’ve probably hit this scenario:</p>
 
-<p>This setup was working as expected. The whole process use to complet in about
-50 minutes.</p>
+<ul>
+  <li>
+    <p>You make a commit on a personal project… but it’s signed with your work email.</p>
+  </li>
+  <li>
+    <p>You contribute to an open-source repo during work hours… and your employer’s name shows up in the author details.</p>
+  </li>
+  <li>
+    <p>You switch between different remotes, SSH keys, or GPG settings… and constantly forget to reconfigure Git.</p>
+  </li>
+</ul>
 
-<p>After few days, I received a file size of 5GB. For this size, may times,
-puppet was failing to download it. I started evaluating best available tools.
-First in the list was powershell’s curl. Curl was better but not quite
-satisfactory. While looking for some of the better utilities, I stumbled upon
-MicroSoft’s new utility called ‘Start-BitsTransfer’. Its syntax is very simple
-and easy to use. Syntax:</p>
+<p>This is where conditional Git configuration becomes a lifesaver.</p>
 
-<p>D:&gt; Start-BitsTransfer -Source “http://server.localtion/file.txt” <br />
--Destination “D:\install_folder\file.txt”</p>
+<p>The Problem Without Conditional Config
+By default, Git uses the global configuration from ~/.gitconfig.
+That’s convenient—until it’s wrong for the context.</p>
 
-<p>With Start-BitsTransfer download time has come down to 4 minutes. I am now
-using Start-BitsTransfer extensively to improve download times. Well Done
-Microsoft.</p>
+<p>Example:</p>
+
+<p>git config –global user.name “Jagadeesh Malakannavar”
+git config –global user.email “jagadeesh.malakannavar@company.com”</p>
+
+<p>Now every repository, personal or work-related, uses those credentials unless you manually override them per project:</p>
+
+<p>git config user.email “mnjagadeesh@gmail.com”</p>
+
+<p>And we all know how easy it is to forget that step.</p>
+
+<p>Conditional Git Config
+Git supports conditional includes—a feature that lets you define multiple configurations and have Git automatically choose the right one based on the repository location or other conditions.</p>
+
+<p>For example, you might set it up so:</p>
+
+<ul>
+  <li>
+    <p>Any repo inside ~/work/ uses your corporate email and signing key.</p>
+  </li>
+  <li>
+    <p>Any repo inside ~/personal/ uses your personal GitHub credentials.</p>
+  </li>
+  <li>
+    <p>Specific repositories use unique SSH keys.</p>
+  </li>
+</ul>
+
+<p>How It Works
+Inside your ~/.gitconfig, you can add an includeIf block:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">[includeIf "gitdir:~/work/"]</span>
+    <span class="py">path</span> <span class="p">=</span> <span class="s">~/.gitconfig-work</span>
+
+<span class="nn">[includeIf "gitdir:~/personal/"]</span>
+    <span class="py">path</span> <span class="p">=</span> <span class="s">~/.gitconfig-personal</span>
+
+</code></pre></div></div>
+
+<p>Then create the extra config files:</p>
+
+<p>~/.gitconfig-work</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">[user]</span>
+    <span class="py">name</span> <span class="p">=</span> <span class="s">Jagadeesh Malakannavar</span>
+    <span class="py">email</span> <span class="p">=</span> <span class="s">jagadeesh.malakannavar@company.com</span>
+<span class="nn">[core]</span>
+    <span class="py">sshCommand</span> <span class="p">=</span> <span class="s">ssh -i ~/.ssh/id_rsa_work</span>
+
+</code></pre></div></div>
+
+<p>~/.gitconfig-personal</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">[user]</span>
+    <span class="py">name</span> <span class="p">=</span> <span class="s">Jagadeesh Malakannavar</span>
+    <span class="py">email</span> <span class="p">=</span> <span class="s">mnjagadeesh@gmail.com</span>
+<span class="nn">[core]</span>
+    <span class="py">sshCommand</span> <span class="p">=</span> <span class="s">ssh -i ~/.ssh/id_rsa_personal</span>
+
+</code></pre></div></div>
+
+<p>Now Git automatically picks the correct identity and settings when you’re inside those directories—no manual switching, no accidental leakage of credentials.</p>
+
+<p>Why This Matters?</p>
+<ul>
+  <li>Privacy &amp; Security – Prevent leaking your personal info into corporate commits or vice versa.</li>
+  <li>Compliance – Ensure your work commits always carry your company-approved signature.</li>
+  <li>Convenience – Stop editing .git/config every time you switch projects.</li>
+  <li>Professionalism – Avoid messy commit histories with mismatched author details.</li>
+</ul>
 
   </section>
   
