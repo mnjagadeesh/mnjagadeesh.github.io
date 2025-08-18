@@ -3,6 +3,36 @@
   
     
     <url>
+      <loc>http://localhost:4000/2025/pipandup/</loc>
+      
+        <lastmod>2025-08-17T18:09:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/2025/flashback/</loc>
+      
+        <lastmod>2025-08-09T20:34:23+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>http://localhost:4000/2018/startbitstransfer/</loc>
       
         <lastmod>2018-02-01T21:34:23+05:30</lastmod>
@@ -21,6 +51,21 @@
       <loc>http://localhost:4000/2018/morsesong/</loc>
       
         <lastmod>2018-02-01T20:34:23+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/2018/customgitconfig/</loc>
+      
+        <lastmod>2018-01-18T20:34:23+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -66,21 +111,6 @@
       <loc>http://localhost:4000/2016/vu/</loc>
       
         <lastmod>2016-02-01T20:34:23+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2016/welcome-to-jekyll/</loc>
-      
-        <lastmod>2016-01-08T20:34:23+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -158,7 +188,7 @@
     <url>
       <loc>http://localhost:4000/feed.xml</loc>
       
-        <lastmod>2025-08-12T12:15:00+05:30</lastmod>
+        <lastmod>2025-08-18T13:54:39+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -173,7 +203,7 @@
     <url>
       <loc>http://localhost:4000/humans.txt</loc>
       
-        <lastmod>2025-08-12T12:15:00+05:30</lastmod>
+        <lastmod>2025-08-18T13:54:39+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -190,7 +220,7 @@
     <url>
       <loc>http://localhost:4000/js/main.js</loc>
       
-        <lastmod>2025-08-12T12:15:00+05:30</lastmod>
+        <lastmod>2025-08-18T13:54:39+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -205,7 +235,7 @@
     <url>
       <loc>http://localhost:4000/css/main.css</loc>
       
-        <lastmod>2025-08-12T12:15:00+05:30</lastmod>
+        <lastmod>2025-08-18T13:54:39+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -224,7 +254,7 @@
     <url>
       <loc>http://localhost:4000/assets/css/style.css</loc>
       
-        <lastmod>2025-08-12T12:15:00+05:30</lastmod>
+        <lastmod>2025-08-18T13:54:39+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -233,6 +263,8 @@
         <priority>0.3</priority>
       
     </url>
+    
+  
     
   
 </urlset>
