@@ -4,7 +4,6 @@ date:   2018-02-01 16:04:23
 categories: [devops]
 tags: [devops]
 ---
-8 Apr 2018 • on [devops](/tags/#devops)
 
 # Start-BitsTransfer: Tool that downloads very quickly!!
 
