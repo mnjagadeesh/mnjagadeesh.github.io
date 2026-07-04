@@ -6,7 +6,7 @@ Gemfile.lock
 # Jekyll cache
 .jekyll-cache
 .jekyll-metadata
-# _site
+_site
 
 # RubyGems
 *.gem
@@ -24,7 +24,7 @@ package-lock.json
 
 # Misc
 _sass/vendors
-#assets/js/dist
+assets/js/dist
 
 # Hidden system files
 *~
