@@ -25,6 +25,7 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60 # Increase this value
     strategy:
       matrix:
         ruby: ["3.3", "3.4"]
